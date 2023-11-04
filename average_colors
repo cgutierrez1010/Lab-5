@@ -1,0 +1,25 @@
+void average_colors(std::vector<Pixel>& pixel_list) {
+    float totalR = 0.0, totalG = 0.0, totalB = 0.0;
+    
+    for (const Pixel& pixel : pixel_list) {
+        totalR += pixel.r;
+        totalG += pixel.g;
+        totalB += pixel.b;
+    }
+    
+    int pixelCount = pixel_list.size();
+    
+    float avgR = totalR / pixelCount;
+    float avgG = totalG / pixelCount;
+    float avgB = totalB / pixelCount;
+
+    std::cout << "Average R: " << avgR << ", G: " << avgG << ", B: " << avgB << std::endl;
+}
+
+void flip_vertically(std::vector<Pixel>& pixel_list) {
+    int maxY = 255; // Change this to your specific maximum Y value (0 to maxY).
+    
+    for (Pixel& pixel : pixel_list) {
+        pixel.y = maxY - pixel.y; 
+    }
+}
